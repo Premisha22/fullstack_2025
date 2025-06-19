@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4x4 Grid</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-rows: 100px 100px 100px 100px;
+      grid-template-columns:  100px 100px 100px 100px;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .child {
+      border: 2px solid black;
+      background-color: red;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .header {
+      grid-column: 1 / 5; 
+      background-color: rgb(43, 226, 119);
+    }
+
+    .sidebar {
+      grid-row: 2 / 4;
+      grid-column: 1 / 2;
+       background-color: burlywood;
+    }
+
+    .content {
+      grid-row: 2 / 4;
+      grid-column: 2 / 5;
+       background-color: burlywood ;
+    }
+
+    .footer {
+      grid-column: 1 / 5;
+       background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="child header">Header</div>
+    <div class="child sidebar">Sidebar</div>
+    <div class="child content">Content</div>
+    <div class="child footer">Footer</div>
+  </div>
+</body>
+</html>

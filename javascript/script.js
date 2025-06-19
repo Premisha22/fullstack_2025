@@ -35,3 +35,10 @@ console.log(total)
 //map,filter,reduce
 var result = arr.map(num => num * 2).filter(num => num > 5).reduce((val,num) => val + num,0)
 console.log(result)
+
+var details = async () =>{
+    var response = await fetch('https://dummyjson.com/users')
+    var users = await response.json();
+    console.log(users)
+}
+details();
