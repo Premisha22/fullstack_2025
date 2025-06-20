@@ -1,43 +1,34 @@
 import React, { useState } from 'react';
-
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
+// import './Login.css'
+const Login = () => {
+  const [formData,setFormData]=useState ({
+    email:'',
+    password:''
+  })
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    alert(`Logged in as ${email}`);
-  };
+    console.log(formData)
+    setFormData({
+      email:"",
+      password:""
+    })
+  }
+  const handleChange = (e) => {
+  setFormData((prev) => ({...prev,[e.target.name]:e.target.value}))
+}
 
-  return (
-    <div style={{
-      display: 'flex', justifyContent: 'center', alignItems: 'center',
-      height: '100vh', flexDirection: 'column'
-    }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', width: '300px' }}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={{ marginBottom: '10px', padding: '8px' }}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={{ marginBottom: '10px', padding: '8px' }}
-        />
-        <button type="submit" style={{ padding: '10px' }}>Login</button>
-      </form>
-    </div>
-  );
+return(
+  <div>
+    <form action="" onSubmit={handleSubmit}>
+    <h1>Login</h1>
+    <label>Email:</label>
+    <input type="email" name="email" value={formData.email} onChange={handleChange}/>
+    <label>Password:</label>
+    <input type="password" name='password' value={formData.password} onChange={handleChange}/>
+    <button onClick={handleSubmit}>Submit</button>
+    </form>
+  </div>
+)
 }
 
 export default Login;
