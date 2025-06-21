@@ -10,6 +10,9 @@ import State from './components/Hooks/State.jsx'
 import Effects from './components/Hooks/Effects.jsx'
 import Effect2 from './components/Hooks/Effect2.jsx'
 import Login from './pages/Login.jsx'
+import Reff from './components/Hooks/Reff.jsx'
+import Reducer from './components/Hooks/Reducer.jsx'
+
 // const App = () => {
 //   var fruit = ["Apple","Banana","Orange"]
 //   var users={username:"Premi",password:"3245"}
@@ -48,6 +51,7 @@ import React from 'react'
 import Nav from './components/Nav'
 import {Routes,Route} from 'react-router-dom'
 
+
 function App() {
   var fruit = ["Apple","Banana","Orange"]
   var users={username:"Premi",password:"3245"}
@@ -56,7 +60,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path='/' element ={<Home items = {fruit} users={users}/>}/>
-        <Route path='/about' element ={<About/>}/>
+        <Route path='/about' element ={<About items={fruit} users={users}/>}/>
         <Route path='/skills' element={<Skills/>}/>
         <Route path='/contact'element={<Contact/>}/>
         <Route path='/counter'element={<Counter/>}/>
@@ -65,7 +69,8 @@ function App() {
         <Route path='/effects'element={<Effects/>}/>
         <Route path='/effect2'element={<Effect2/>}/>
         <Route path='/Login'element={<Login/>}/>
-
+         <Route path='/reff'element={<Reff/>}/>
+         <Route path='/useReducer'element={<Reducer/>}/>
       </Routes>
     </div>
   )
