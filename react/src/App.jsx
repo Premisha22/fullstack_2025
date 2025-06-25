@@ -12,7 +12,7 @@ import Effect2 from './components/Hooks/Effect2.jsx'
 import Login from './pages/Login.jsx'
 import Reff from './components/Hooks/Reff.jsx'
 import Reducer from './components/Hooks/Reducer.jsx'
-
+import Todo from './components/Todo.jsx'
 // const App = () => {
 //   var fruit = ["Apple","Banana","Orange"]
 //   var users={username:"Premi",password:"3245"}
@@ -71,6 +71,7 @@ function App() {
         <Route path='/Login'element={<Login/>}/>
          <Route path='/reff'element={<Reff/>}/>
          <Route path='/useReducer'element={<Reducer/>}/>
+         <Route path='/todo'element={<Todo/>}/>
       </Routes>
     </div>
   )
